@@ -1,0 +1,31 @@
+/* pages/scan/scan.wxss */
+@import "../../template/template.wxss";
+
+.box-content {
+  text-align: center;
+}
+
+.box-content .box-top {
+  padding: 70rpx;
+  background-color: #ccc;
+}
+
+.box-content .box-top image {
+  display: block;
+  box-sizing: border-box;
+  border: 20rpx solid #fff;
+}
+
+.box-content .box-tips {
+  padding: 4vh 0;
+  font-size: 36rpx;
+}
+
+.box-content .box-btn {
+  display: inline-block;
+  padding: 15rpx 30rpx;
+  background-color: #09f;
+  border-radius: 20rpx;
+  margin-top: 2vh;
+  color: #fff;
+}

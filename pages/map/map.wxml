@@ -1,0 +1,52 @@
+<!--pages/map/map.wxml-->
+<import src='../../template/template.wxml' />
+<view class='box'>
+  <!-- list图标 -->
+  <view class='another-map' bindtap='showOrHideList'>
+    <image mode='scaleToFill' style='width:50rpx;height:40rpx;' src='../../images/list.png'></image>
+    <view>其它</view>
+  </view>
+  <view class='current-hall'>{{currentTitle}}导览图</view>
+
+  <movable-area class='map' style='height:{{map.height}}px'>
+    <movable-view x='{{img.x}}' y='{{img.y}}' style="width:{{img.width}}px;height:{{img.height}}px;position:relative;" animation='false' direction="all" scale='true' scale-value='{{map.initScale}}' scale-min='1' scale-max='2' inertia='true' bindscale='bindscale'>
+      <image src='{{img.src}}' bindload='imgLoad' style="width:{{img.width}}px;height:{{img.height}}px;" bindtap='imgTab'></image>
+      <view class='pointer' wx:if='{{showPointer}}' data-index='{{index}}' wx:for='{{pointer.position}}' wx:key='index' style='width:{{pointer.width}}rpx;height:{{pointer.height}}rpx;position:absolute;z-index:{{item.index==currentIndex?3:2}};left:{{item.x}}rpx;top:{{item.y}}rpx;'>
+        <!-- 展项坐标 -->
+        <image src='../../images/position.png' mode='scaleToFill' bindtap='showPic' data-index='{{index}}' style='width:100%;height:100%;'></image>
+        <!-- 展项名称 -->
+        <view style='font-size:{{24/map.scale}}rpx;white-space:nowrap;position:absolute;top:{{pointer.height*1+map.scale*10}}rpx;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.5);color:#fff;padding:0 {{10/map.scale}}rpx;border-radius:{{10/map.scale}}rpx;'>{{item.hall_name}}</view>
+        <!-- 展项图片 -->
+        <view class='show-pic' wx:if='{{item.showPic}}' data-i_id='{{item.z_id}}' bindtap='goListDetail' style='width:300%;height:300%;position:absolute;left:48%;{{item.top?"bottom":"top"}}:{{item.top?pointer.height/map.scale:pointer.height*map.scale*0.85}}rpx;transform:{{item.top?"translateX(-50%)":"translateX(-50%) rotate(180deg)"}};'>
+          <image mode='scaleToFill' src='../../images/bgc.png' style='width:100%;height:100%;'></image>
+          <view style='width:84%;height:76%;position:absolute;left:50%;top:6%;transform:translateX(-50%);z-index:3;border-radius:50%;overflow:hidden;text-align:center;'>
+            <image mode='center' style='width:100%;height:100%;display:block;border-radius:50%/60%;transform:{{item.top?"rotate(0deg)":"rotate(180deg)"}};' src='{{ajaxUrl+item.hall_cover}}'></image>
+          </view>
+        </view>
+      </view>
+    </movable-view>
+  </movable-area>
+
+  <template is='template-nav' data='{{iconSrc}}'></template>
+  <!-- list列表 -->
+  <view class='list {{showList?"show":""}}'>
+    <view class='list-top'>
+      <view class='hall-img'>
+        <image mode='aspectFill' style='width:140rpx;height:140rpx;border-radius:50%;' src='{{ajaxUrl+logoSrc}}'></image>
+      </view>
+      <text>选择地图</text>
+      <image mode='aspectFill' src='../../images/close.png' style='width:40rpx;height:40rpx;' bindtap='imgTab'></image>
+    </view>
+    <scroll-view scroll-y style='height:50vh;'>
+      <view class='list-detail {{z_id==item.z_id?"active":""}}' wx:for='{{hallList}}' wx:key='index' data-z_id='{{item.z_id}}' data-hasmap='{{item.hall_map!=""}}' bindtap='checkHall'>
+        <view class='detail-left'>
+          <image mode='aspectFill' src='{{ajaxUrl+item.hall_map}}' style='width:150rpx;height:90rpx;'></image>
+        </view>
+        <view class='detail-right txt-cut2'>
+          {{item.hall_name}}
+        </view>
+      </view>
+      <view class='no-data' wx:if='{{hallList.length==0}}'>暂无数据</view>
+    </scroll-view>
+  </view>
+</view>

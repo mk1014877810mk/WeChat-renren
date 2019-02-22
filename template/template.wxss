@@ -1,0 +1,152 @@
+/* 模板1 */
+
+.template1 {
+  height: 138rpx;
+  border-bottom: 1rpx solid #ddd;
+  padding: 20rpx 0;
+  text-align: left;
+}
+
+.template1:nth-last-child(2) {
+  /* border: none; */
+}
+
+.template1 .template1-left {
+  display: inline-block;
+  width: 200rpx;
+  height: 130rpx;
+  vertical-align: middle;
+}
+
+.template1 .template1-right {
+  display: inline-block;
+  vertical-align: middle;
+  width: 510rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  margin-left: 20rpx;
+}
+
+.template1 .template1-right .template1-right-title {
+  font-size: 32rpx;
+  margin: 10rpx 0;
+}
+
+.template1 .template1-right .template1-right-des {
+  font-size: 28rpx;
+  color: #666;
+  word-break: break-all;
+}
+
+/* 模板2 */
+
+.template2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 336rpx;
+  height: 400rpx;
+  box-shadow: 0 0 4rpx 4rpx #ddd;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  margin-left: 8rpx;
+  text-align: left;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.template2 .template2-bottom {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.template2 .template2-bottom .template2-bottom-title {
+  font-size: 32rpx;
+  padding: 10rpx 0;
+}
+
+.template2 .template2-bottom .template2-bottom-des {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.tips{
+  line-height: 20rpx;
+}
+
+/* 模板3 */
+
+.template3 {
+  width: 100%;
+  height: 560rpx;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  padding: 0 20rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.template3:nth-last-child(2) {
+  margin-bottom: 10rpx;
+}
+
+.template3 .template3-top .template3-top-title {
+  position: relative;
+  padding-left: 20rpx;
+  text-align: left;
+  font-size: 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.template3 .template3-top .template3-top-title::before {
+  content: '';
+  width: 8rpx;
+  height: 40rpx;
+  background-color: #000;
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+}
+
+.template3 .template3-bottom {
+  padding: 16rpx 0;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.template3 .template3-bottom .template3-bottom-des {
+  font-size: 30rpx;
+  color: #666;
+}
+
+/* nav模板 */
+.template-nav{
+  width: 100%;
+  height: 99rpx;
+  border-top: 1rpx solid #ddd;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  font-size: 28rpx;
+  box-shadow: 0 0 2rpx 2rpx #ddd;
+}
+
+.template-nav>view{
+  margin-top: 6rpx;
+}
+
+.template-nav image{
+  display: block;
+  margin: 0 auto;
+}
+
+.template-nav>view:nth-child(2) image{
+  margin-top: 12rpx;
+}
+

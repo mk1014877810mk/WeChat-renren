@@ -1,0 +1,12 @@
+<!--pages/scan/scan.wxml-->
+<import src='../../template/template.wxml' />
+<view class='box'>
+  <view class='box-content'>
+    <view class='box-top'>
+      <image mode='aspectFill' src='{{ajaxUrl+logoSrc}}' style='width:610rpx;height:610rpx;'></image>
+    </view>
+    <view class='box-tips one-txt-cut'>文化科技，尽在{{title}}</view>
+    <view class='box-btn' bindtap='goScanImg'>扫码导览</view>
+  </view>
+  <template is='template-nav' data='{{iconSrc}}'></template>
+</view>

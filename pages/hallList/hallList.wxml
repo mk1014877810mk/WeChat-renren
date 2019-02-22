@@ -1,0 +1,6 @@
+<!--pages/hallList/hallList.wxml-->
+<import src='../../template/template.wxml' />
+<view class='box'>
+  <template is='template7' wx:for="{{contentList}}" wx:key='{{index}}' data='{{item}}'></template>
+  <view class='tips' wx:if='{{contentList.length>9||contentList.length==0}}'>{{loadText}}</view>
+</view>

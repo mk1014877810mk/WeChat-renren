@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class='box'>
+  <view class='top'>
+    <swiper indicator-dots='{{swiper.indicatorDots}}' autoplay='{{swiper.autoplay}}' interval='{{swiper.interval}}' circular='{{swiper.circular}}' duration='{{swiper.duration}}' loop indicator-color='{{swiper.indicatorColor}}' indicator-active-color='{{swiper.indicatorActivColor}}'>
+      <block wx:for='{{swiper.imgUrls}}' wx:key='{{index}}'>
+        <swiper-item data-e_id='{{item.e_id}}' bindtap='goHome'>
+          <image mode='aspectFill' src='{{ajaxUrl+item.hall_cover}}' style='width:750rpx;height:100%;' bindtap='goDetail'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='first-template' wx:if='{{template.first}}' wx:for='{{exhibition.firstData}}' wx:key='{{index}}'>
+    <view class='first-title'>
+      {{item.hall_name}}
+    </view>
+    <view class='first-content' data-e_id='{{item.e_id}}' bindtap='goHome'>
+      <image mode='aspectFill' src='{{ajaxUrl+item.hall_cover}}' style='width:100%;height:330rpx'></image>
+    </view>
+  </view>
+  <view class='second-template' wx:if='{{template.second}}'>
+    <view class='second-title '>
+      推荐精品博物馆
+    </view>
+    <view class='second-content'>
+      <view class='second-list' wx:for='{{exhibition.secondData}}' wx:key='{{index}}' data-e_id='{{item.e_id}}' bindtap='goHome'>
+        <image mode='aspectFill' src='{{ajaxUrl+item.hall_cover}}' style='width:100%;height:200rpx;'></image>
+        <view class='detail-title one-txt-cut'>{{item.hall_name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='third-template' wx:if='{{template.third}}'>
+    <view class='third-list' wx:for='{{exhibition.thirdData}}' wx:key='{{index}}' data-e_id='{{item.e_id}}' bindtap='goHome'>
+      <view class='third-left'>
+        <image mode='aspectFill' src='{{ajaxUrl+item.hall_cover}}' style='width:200rpx;height:130rpx;'> </image>
+      </view>
+      <view class='third-right'>
+        <view class='third-title one-txt-cut'>{{item.hall_name}}</view>
+        <view class='third-des txt-cut2'>{{item.hall_summary}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='tips' wx:if='{{exhibition.firstData.length==0||exhibition.thirdData.length>4}}'>{{exhibition.firstData.length!=0?loadText:'暂无数据'}}</view>
+</view>

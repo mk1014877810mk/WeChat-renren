@@ -1,0 +1,120 @@
+/* pages/map/map.wxss */
+@import "../../template/template.wxss";
+
+.box .map {
+  width: 100%;
+  overflow: hidden;
+}
+
+.box .another-map{
+  padding: 10rpx;
+  position: fixed;
+  right: 40rpx;
+  bottom: 39vh;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 0 6rpx 3rpx rgba(50, 50, 50, .2);
+}
+
+.box .current-hall{
+  position: fixed;
+  left: 40rpx;
+  top: 40rpx;
+  z-index: 3;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.box .another-map>view{
+  font-size: 20rpx;
+  text-align: center;
+}
+
+.box .map image {
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  width: 0rpx;
+  height: 0rpx;
+}
+
+.template-nav>view:nth-child(3) {
+  color: #09f;
+}
+
+.box .list {
+  position: fixed;
+  bottom: -60vh;
+  left: 50rpx;
+  z-index: 1;
+  width: 650rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 0 4rpx 4rpx #ddd;
+  transition: bottom 0.3s linear;
+}
+
+.box .list .list-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ddd;
+  font-size: 30rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+}
+
+.box .list .list-top .hall-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140rpx;
+  height: 140rpx;
+  padding: 10rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 4rpx 6rpx #ddd;
+}
+
+.box .list scroll-view{
+  padding: 0 20rpx;
+}
+
+.box .list .list-detail {
+  display: flex;
+  justify-content: left;
+  width: calc(100% - 40rpx);
+  height: 130rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.box .list .list-detail .detail-right {
+  display: flex;
+  margin-left: 20rpx;
+  align-items: center;
+  align-content: center;
+  font-size: 32rpx;
+}
+
+.box .list .no-data{
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: #999;
+}
+
+.show {
+  bottom: 150rpx !important;
+}
+
+.active{
+  background-color: #efefef;
+}

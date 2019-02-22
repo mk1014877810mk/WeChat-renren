@@ -1,0 +1,5 @@
+<!--pages/listDetail/listDetail.wxml-->
+<view class='box'>
+  <web-view src='{{src}}'></web-view>
+  <!-- <rich-text nodes="{{nodes}}"></rich-text> -->
+</view>

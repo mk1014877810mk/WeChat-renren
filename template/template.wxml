@@ -1,0 +1,124 @@
+<!-- 模板1 -->
+<template name="template1">
+  <swiper-item>
+    <view class='template1' wx:for='{{item}}' wx:key='{{index}}' data-i_id='{{item.z_id}}' bindtap='goAnother'>
+      <view class='template1-left'>
+        <image mode='aspectFill' src='{{item.hall_cover}}' style='width:200rpx;height:130rpx;'></image>
+      </view>
+      <view class='template1-right'>
+        <view class='template1-right-title one-txt-cut'>{{item.hall_name}}</view>
+        <view class='template1-right-des txt-cut2'>{{item.hall_summary}}</view>
+      </view>
+    </view>
+    <view class='tips' wx:if='{{item.length>9||item.length==0}}'>{{item[0].loadText||'暂无数据'}}</view>
+  </swiper-item>
+</template>
+
+
+<!-- 模板2 -->
+<template name="template2">
+  <swiper-item>
+    <view class='template2' wx:for='{{item}}' wx:key='{{index}}' data-i_id='{{item.z_id}}' bindtap='goAnother'>
+      <view class='template2-top'>
+        <image mode='aspectFill' src='{{item.hall_cover}}' style='width:345rpx;height:230rpx;display:block;'></image>
+      </view>
+      <view class='template2-bottom'>
+        <view class='template2-bottom-title one-txt-cut'>{{item.hall_name}}</view>
+        <view class='template2-bottom-des txt-cut2'>{{item.hall_summary}}</view>
+      </view>
+    </view>
+    <view class='tips' wx:if='{{item.length>9||item.length==0}}'>{{item[0].loadText||'暂无数据'}}</view>
+  </swiper-item>
+</template>
+
+
+<!-- 模板3 -->
+<template name="template3">
+  <swiper-item>
+    <view class='template3' wx:for='{{item}}' wx:key='{{index}}' data-i_id='{{item.z_id}}' bindtap='goAnother'>
+      <view class='template3-top'>
+        <view class='template3-top-title one-txt-cut'>{{item.hall_name}}</view>
+        <image mode='aspectFill' src='{{item.hall_cover}}' style='width:710rpx;height:350rpx;'></image>
+      </view>
+      <view class='template3-bottom'>
+        <view class='template3-bottom-des txt-cut2'>{{item.hall_summary}}</view>
+      </view>
+    </view>
+    <view class='tips' wx:if='{{item.length>9||item.length==0}}'>{{item[0].loadText||'暂无数据'}}</view>
+  </swiper-item>
+</template>
+
+
+<!-- 模板4 -->
+<template name="template4">
+  <view class='template1' data-z_id='{{item.z_id}}' bindtap='goHallList'>
+    <view class='template1-left'>
+      <image mode='aspectFill' src='{{item.img}}' style='width:200rpx;height:130rpx;'></image>
+    </view>
+    <view class='template1-right'>
+      <view class='template1-right-title one-txt-cut'>{{item.title}}</view>
+      <view class='template1-right-des txt-cut2'>{{item.des}}</view>
+    </view>
+  </view>
+</template>
+
+
+<!-- 模板5 -->
+<template name="template5">
+  <view class='template2' data-z_id='{{item.z_id}}' bindtap='goHallList'>
+    <view class='template2-top'>
+      <image mode='aspectFill' src='{{item.img}}' style='width:345rpx;height:230rpx;display:block;'></image>
+    </view>
+    <view class='template2-bottom'>
+      <view class='template2-bottom-title one-txt-cut'>{{item.title}}</view>
+      <view class='template2-bottom-des txt-cut2'>{{item.des}}</view>
+    </view>
+  </view>
+</template>
+
+
+<!-- 模板6 -->
+<template name="template6">
+  <view class='template3' data-z_id='{{item.z_id}}' bindtap='goHallList'>
+    <view class='template3-top'>
+      <view class='template3-top-title one-txt-cut'>{{item.title}}</view>
+      <image mode='aspectFill' src='{{item.img}}' style='width:710rpx;height:350rpx;'></image>
+    </view>
+    <view class='template3-bottom'>
+      <view class='template3-bottom-des txt-cut2'>{{item.des}}</view>
+    </view>
+  </view>
+</template>
+
+
+<!-- 展项页模板 -->
+<template name="template7">
+  <view class='template1' data-i_id='{{item.z_id}}' bindtap='goDetail'>
+    <view class='template1-left'>
+      <image mode='aspectFill' src='{{item.hall_cover}}' style='width:200rpx;height:130rpx;'></image>
+    </view>
+    <view class='template1-right'>
+      <view class='template1-right-title one-txt-cut'>{{item.hall_name}}</view>
+      <view class='template1-right-des txt-cut2'>{{item.hall_summary}}</view>
+    </view>
+  </view>
+</template>
+
+
+<!-- nav模板 -->
+
+<template name="template-nav">
+  <view class='template-nav flex'>
+    <view bindtap='navJump' data-index='1'>
+      <image mode='scaleToFill' style='width:54rpx;height:50rpx;margin-top:4rpx;' src='{{iconSrc.first}}'></image>
+      <view class='text'>展项</view>
+    </view>
+    <view bindtap='navJump' data-index='2'>
+      <image style='width:64rpx;height:64rpx;' src='{{iconSrc.second}}'></image>
+    </view>
+    <view bindtap='navJump' data-index='3'>
+      <image style='width:50rpx;height:50rpx;' src='{{iconSrc.third}}'></image>
+      <view class='text'>地图</view>
+    </view>
+  </view>
+</template>

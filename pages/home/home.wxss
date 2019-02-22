@@ -1,0 +1,78 @@
+/* pages/home/home.wxss */
+@import "../../template/template.wxss";
+
+.box .top swiper-item {
+  position: relative;
+}
+
+.box .top .swiper-title {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  font-size: 25rpx;
+  padding: 6rpx 16rpx;
+  color: rgb(8, 6, 26);
+}
+
+.box .logo {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+}
+
+.box .logo .logo-left {
+  float: left;
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+}
+
+.box .logo text.title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 34rpx;
+  margin-left: 10rpx;
+  font-weight: 600;
+}
+
+/* tab */
+
+.box .tab .tab-nav {
+  background-color: #fff;
+}
+
+.box .tab .tab-nav .hall {
+  /* min-width: 25%; */
+  text-align: center;
+}
+
+.box .tab .tab-nav text {
+  display: block;
+  padding: 20rpx;
+  font-size: 30rpx;
+  color: #666;
+  border-bottom: 6rpx solid transparent;
+}
+
+.box .tab .tab-nav text.active {
+  border-bottom: 6rpx solid #09f;
+}
+
+.box .tab .content-big1, .box .another-tab {
+  margin-top: 20rpx;
+  margin-bottom: 100rpx;
+}
+
+.bgc {
+  background-color: #fff;
+  padding-left: 20rpx;
+}
+
+.interspace {
+  padding-bottom: 20rpx;
+}
+
+.template-nav>view:nth-child(1) {
+  color: #09f;
+}

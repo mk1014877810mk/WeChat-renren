@@ -1,0 +1,83 @@
+/**index.wxss**/
+
+/* 模板1、模板2、模板3公共部分 */
+
+.box .first-template, .box .second-template, .box .third-template {
+  margin-top: 20rpx;
+  padding: 0 35rpx;
+  background-color: #fff;
+}
+
+.box .first-template .first-title, .box .second-template .second-title {
+  position: relative;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.box .first-template .first-title:before,
+.box .second-template .second-title:before {
+  content: '';
+  position: absolute;
+  left: -20rpx;
+  top: 22rpx;
+  width: 8rpx;
+  height: calc(100% - 40rpx);
+  background-color: #000;
+}
+
+/* 模板2内容 */
+
+.box .second-template .second-content .second-list {
+  display: inline-block;
+  width: 330rpx;
+  vertical-align: middle;
+  padding-bottom: 20rpx;
+  text-align: center;
+}
+
+.box .second-template .second-content .second-list:nth-child(2n) {
+  margin-left: 22rpx;
+}
+
+.box .second-template .second-content .second-list .detail-title {
+  font-size: 30rpx;
+  padding: 10rpx 0;
+}
+
+/* 模板3 */
+
+.box .third-template {
+  padding-bottom: 35rpx;
+}
+
+.box .third-template .third-list {
+  width: 100%;
+  padding: 35rpx 0 0;
+}
+
+.box .third-template .third-list .third-left {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.box .third-template .third-list .third-right {
+  display: inline-block;
+  vertical-align: top;
+  width: 445rpx;
+  margin-left: 35rpx;
+}
+
+.box .third-template .third-list .third-right .third-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+  word-break: break-all;
+}
+
+.box .third-template .third-list .third-right .third-des {
+  font-size: 28rpx;
+  color: #666;
+  word-break: break-all;
+}

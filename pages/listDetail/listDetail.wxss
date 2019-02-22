@@ -1,0 +1,5 @@
+/* pages/listDetail/listDetail.wxss */
+.box{
+  padding: 20rpx;
+  background-color: #fff;
+}

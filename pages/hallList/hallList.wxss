@@ -1,0 +1,16 @@
+/* pages/hallList/hallList.wxss */
+@import "../../template/template.wxss";
+
+page {
+  background-color: #fff;
+}
+
+.box {
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+
+.box .template1:nth-child(1) {
+  border-top: 1rpx solid #ddd;
+}
+

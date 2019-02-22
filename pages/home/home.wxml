@@ -1,0 +1,53 @@
+<!--pages/home/home.wxml-->
+<import src='../../template/template.wxml' />
+<view class='box'>
+  <view class='top'>
+    <swiper indicator-dots='{{swiper.indicatorDots}}' autoplay='{{swiper.autoplay}}' interval='{{swiper.interval}}' circular='{{swiper.circular}}' duration='{{swiper.duration}}' loop indicator-color='{{swiper.indicatorColor}}' indicator-active-color='{{swiper.indicatorActivColor}}'>
+      <block wx:for='{{swiper.imgUrls}}' wx:key='{{index}}'>
+        <swiper-item bindtap="goAnother" data-index='{{index}}' data-e_id='{{item.e_id}}' data-z_id='{{item.z_id}}' data-i_id='{{item.z_id}}'>
+          <image mode='aspectFill' src='{{ajaxUrl+item.hall_cover}}' style='width:750rpx;height:100%;'></image>
+          <text class='swiper-title'>{{item.hall_name}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='logo'>
+    <view class='logo-left'>
+      <image src='{{ajaxUrl+logoSrc}}' style='width:80rpx;height:80rpx;margin:10rpx 10rpx 10rpx 0'></image>
+    </view>
+    <text class='title'>{{title}}</text>
+  </view>
+  <view class='tab' wx:if='{{template<4}}'>
+    <view class='template-big1'>
+      <view class='tab-nav flex'>
+        <view wx:for='{{tab.tabTitle}}' wx:key='{{index}}' data-index='{{index}}' data-z_id='{{item.z_id}}' class='hall {{activeTab==0?"active":""}}' bindtap='changeBigTab'>
+          <text class='{{tab.currentTab==index?"active":""}}'>{{item.title}}</text>
+        </view>
+      </view>
+      <view class='content-big1 {{template==3||template==6?"":"bgc"}}'>
+        <swiper style='height:{{tab.height}}rpx;' current='{{tab.currentTab}}' class='content1-box' bindchange='bindChange'>
+          <block wx:for='{{tab.contents}}' wx:key='{{index}}'>
+            <!-- 模板1 -->
+            <template wx:if='{{template==1}}' is='template1' data='{{item}}'></template>
+            <!-- 模板2 -->
+            <template wx:if='{{template==2}}' is='template2' data='{{item}}'></template>
+            <!-- 模板3 -->
+            <template wx:if='{{template==3}}' is='template3' data='{{item}}'></template>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+  <view style='min-height:{{listHeight}}rpx' wx:else class='another-tab {{template==3||template==6?"":"bgc"}} {{template==5?"interspace":""}}'>
+    <block>
+      <!-- 模板4 -->
+      <template wx:if='{{template==4}}' is='template4' wx:for="{{tab.hallList}}" wx:key='{{index}}' data='{{item}}'></template>
+      <!-- 模板5 -->
+      <template wx:if='{{template==5}}' is='template5' wx:for="{{tab.hallList}}" wx:key='{{index}}' data='{{item}}'></template>
+      <!-- 模板6 -->
+      <template wx:if='{{template==6}}' is='template6' wx:for="{{tab.hallList}}" wx:key='{{index}}' data='{{item}}'></template>
+      <!-- <view class='tips'>{{loadText}}</view> -->
+    </block>
+  </view>
+  <template is='template-nav' data='{{iconSrc}}'></template>
+</view>

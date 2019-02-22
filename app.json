@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/home/home",
+    "pages/scan/scan",
+    "pages/map/map",
+    "pages/hallList/hallList",
+    "pages/listDetail/listDetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black"
+  }
+}
