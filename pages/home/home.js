@@ -228,10 +228,12 @@ Page({
             that.setData({
               'tab.hallList': exList
             });
+            wx.setStorageSync('lastHallZid', res.data.data[0].z_id);
             that.setAnotherHeight();
           }
           callback && callback(z_idList); // 获取所有展项
         } else if (res.statusCode == 200 && res.data.status == 1006) {
+          wx.setStorageSync('lastHallZid', '');
           wx.hideLoading();
           wx.showToast({
             icon: 'none',

@@ -54,7 +54,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
     var scale = wx.getSystemInfoSync().windowWidth / 750;
     this.setData({
       ajaxUrl: app.globalData.server,
@@ -69,7 +68,7 @@ Page({
     var exist = sence.indexOf('z_id');
     var oParams = {};
     var e_id, z_id;
-    console.log('options-map:', options, 'sence-map:', sence, 'exist-map:', exist);
+    // console.log('options-map:', options, 'sence-map:', sence, 'exist-map:', exist);
     if (exist == -1) { // 点击进入
       this.setData({
         e_id: options.e_id,
@@ -77,6 +76,14 @@ Page({
         title: options.title,
         logoSrc: options.logoSrc,
       });
+      if (!this.data.z_id) {
+        wx.showToast({
+          title: '无数据！',
+          icon: 'none',
+          duration: 2000
+        });
+        return;
+      }
       wx.showLoading({
         title: '加载中...',
       });
